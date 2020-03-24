@@ -1,9 +1,8 @@
-const BookstoreClient = require('./BookstoreClient');
+const Bookstore = require('./Bookstore');
 const utils = require('./utils');
 
 // Fetch all books
-BookstoreClient.getBooks().then(data => {
-  console.log(data);
+Bookstore.getBooks().then(data => {
   let bookList = document.getElementById('book-list');
   data.forEach(book => {
     let bookCard = document.createElement('div'),
@@ -33,6 +32,11 @@ BookstoreClient.getBooks().then(data => {
     bookCard.appendChild(bookCover);
     bookCard.appendChild(cardBody);
     bookList.appendChild(bookCard);
+
+    // go to specific book page when clicked
+    bookCard.addEventListener('click', () => {
+      document.location.href = '/book/' + book.id;
+    });
   });
 });
 

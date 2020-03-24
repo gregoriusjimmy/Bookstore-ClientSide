@@ -12,57 +12,16 @@
       href="https://fonts.googleapis.com/css?family=Baloo+2:400,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/index.styles.css" />
     <title>Cihuy Bookstore</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm navbar-dark">
-      <div class="container">
-        <div class="navbar-brand" href="#">
-          <img
-            src="./src/img/bookworm.svg"
-            width="50"
-            height="30"
-            class="d-inline-block align-top"
-            alt=""
-          />
-          <span><strong>Toko Buku Cihuy</strong></span>
-        </div>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto"></ul>
-          <form class="form-inline my-2 my-lg-0">
-            <div class="input-group">
-              <input
-                class="form-control"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <div class="input-group-append">
-                <span class="input-group-text"
-                  ><i class="fas fa-search"></i
-                ></span>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </nav>
+    {{> nav}}
     <div class="container py-4">
       <div class="row">
         <div class="col-md-5">
-          <div class="category-list ">
+          <div class="category-list">
             <div>Novel</div>
             <div>Novel</div>
             <div>Novel</div>
