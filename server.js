@@ -4,6 +4,7 @@ const port = 3000;
 const { Pool, Client } = require('pg');
 // const books = require('./controller/books');
 const Bookstore = require('./Bookstore');
+const utils = require('./utils');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const session = require('express-session');
@@ -24,9 +25,32 @@ app.set('views', __dirname + '/views');
 app.get('/', (req, res) => {
   res.render('home', { nav: 'nav' });
 });
+
+app.get('/books', (req, res) => {
+  const query = req.query.search.toLowerCase();
+  console.log(query);
+  let filteredBooks = [];
+  Bookstore.getBooks().then(data => {
+    data.forEach(book => {
+      const bookTitle = book.title.toLowerCase();
+      const bookAuthors = book.authors.toLowerCase();
+      if (bookTitle.includes(query) || bookAuthors.includes(query)) {
+        filteredBooks.push(book);
+      }
+    });
+    res.render('books', { nav: 'nav', data: filteredBooks });
+  });
+});
 app.get('/book/:bookId', (req, res) => {
   Bookstore.getBookById(req.params.bookId).then(data => {
-    res.render('book', { nav: 'nav', data: data });
+    res.render('book', {
+      nav: 'nav',
+      data: {
+        ...data,
+        price: utils.formatMoney(data.price),
+        publishedDate: utils.convertDate2(data.publishedDate),
+      },
+    });
   });
 });
 

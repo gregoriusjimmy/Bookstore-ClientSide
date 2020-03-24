@@ -1,9 +1,11 @@
 .book-cover {
-  height: 400px;
+  height: 350px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
+
+  /*margin-left: auto;
+  margin-right: auto; */
+
+  width: 100%;
 }
 /* .img-thumbnail {
   background-color: #f38181;
@@ -13,17 +15,35 @@
 }
 .table {
 }
+td:nth-child(2) {
+  font-weight: 700;
+}
 .book-field td {
   padding: 1px;
   font-size: 16px;
 }
 .book-price {
-  background-color: #f38181;
+  font-size: 24px;
+  font-weight: 700;
+  border-left: 5px solid #f38181;
+  color: #db6969;
   padding: 20px;
-  color: aliceblue;
-  border-radius: 20px;
+}
+.book-price p {
+  margin-bottom: 0px;
 }
 .book-description {
+  height: 220px;
   text-indent: 2em;
   overflow: auto;
+}
+.add-to-card {
+  margin-top: auto;
+  color: aliceblue;
+  background-color: #f38181;
+  border: 0px solid #f38181;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 5px;
 }
