@@ -28,17 +28,21 @@ app.get('/', (req, res) => {
 
 app.get('/books', (req, res) => {
   const query = req.query.search.toLowerCase();
-  console.log(query);
   let filteredBooks = [];
   Bookstore.getBooks().then(data => {
     data.forEach(book => {
       const bookTitle = book.title.toLowerCase();
       const bookAuthors = book.authors.toLowerCase();
       if (bookTitle.includes(query) || bookAuthors.includes(query)) {
+        book.price = utils.formatMoney(book.price);
         filteredBooks.push(book);
       }
     });
-    res.render('books', { nav: 'nav', data: filteredBooks });
+    res.render('books', {
+      nav: 'nav',
+      data: filteredBooks,
+      query: req.query.search,
+    });
   });
 });
 app.get('/book/:bookId', (req, res) => {

@@ -1,24 +1,15 @@
-.category-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 145px;
-  row-gap: 10px;
-  column-gap: 5px;
-}
-.category-list div {
-  padding: 30px;
-  text-align: center;
-  background-color: #f38181;
-  color: aliceblue;
-}
-.carousel-item img {
-  height: 300px;
-}
-
 .booklist-text {
   color: aliceblue;
   background-color: #f38181;
   border-radius: 2px;
+}
+.query-result {
+  font-size: 24px;
+  margin: 20px 0;
+}
+.query-result span {
+  font-weight: 700;
+  color: cornflowerblue;
 }
 #book-list {
   justify-items: center;
@@ -27,6 +18,7 @@
   grid-auto-rows: minmax(300px, auto);
   row-gap: 10px;
 }
+
 .book-title {
   font-size: 14px;
   font-weight: bold;
@@ -53,6 +45,7 @@
   position: absolute;
   bottom: 10;
 }
+
 @media screen and (max-width: 992px) {
   #book-list {
     grid-template-columns: repeat(4, 1fr);
@@ -63,12 +56,6 @@
   #book-list {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(250px, auto);
-  }
-  .category-list {
-    margin-bottom: 16px;
-  }
-  .carousel-item img {
-    height: 250px;
   }
 }
 @media (max-width: 576px) {
