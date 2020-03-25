@@ -16,6 +16,21 @@ class Bookstore {
     let data = await response.json();
     return data;
   }
+
+  static addItem(item) {
+    let oldCart = JSON.parse(window.localStorage.getItem('myCart')) || [];
+    oldCart.push(item);
+    window.localStorage.setItem('myCart', JSON.stringify(oldCart));
+  }
+  static getItem() {
+    return JSON.parse(window.localStorage.getItem('myCart'));
+  }
+  static removeItem() {
+    window.localStorage.removeItem('myCart');
+  }
+  static clearItem() {
+    window.localStorage.clear();
+  }
 }
 
 module.exports = Bookstore;

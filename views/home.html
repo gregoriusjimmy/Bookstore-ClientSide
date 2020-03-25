@@ -18,95 +18,98 @@
   </head>
   <body>
     {{> nav}}
-    <div class="container py-4">
-      <div class="row">
-        <div class="col-md-5">
-          <div class="category-list">
-            <div
-              class="category-drama"
-              onclick="window.location='/category?q=drama'"
-            >
-              <span>Drama</span>
-            </div>
-            <div
-              class="category-science"
-              onclick="window.location='/category?q=science'"
-            >
-              <span>Science</span>
-            </div>
-            <div
-              class="category-romance"
-              onclick="window.location='/category?q=romance'"
-            >
-              <span>Romance</span>
-            </div>
-            <div
-              class="category-horror"
-              onclick="window.location='/category?q=horror'"
-            >
-              <span>Horror</span>
-            </div>
-            <div
-              class="category-fiction"
-              onclick="window.location='/category?q=fiction fiksi fantasy fantasi'"
-            >
-              <span>Fiction</span>
-            </div>
-            <div
-              class="category-comedy"
-              onclick="window.location='/category?q=comedy komedi'"
-            >
-              <span>Comedy</span>
+    <main>
+      <div class="container py-4">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="category-list">
+              <div
+                class="category-drama"
+                onclick="window.location='/category?q=Drama'"
+              >
+                <span>Drama</span>
+              </div>
+              <div
+                class="category-science"
+                onclick="window.location='/category?q=Science'"
+              >
+                <span>Science</span>
+              </div>
+              <div
+                class="category-romance"
+                onclick="window.location='/category?q=Romance'"
+              >
+                <span>Romance</span>
+              </div>
+              <div
+                class="category-horror"
+                onclick="window.location='/category?q=Horror'"
+              >
+                <span>Horror</span>
+              </div>
+              <div
+                class="category-fiction"
+                onclick="window.location='/category?q=Fiction fiksi fantasy fantasi'"
+              >
+                <span>Fiction</span>
+              </div>
+              <div
+                class="category-comedy"
+                onclick="window.location='/category?q=Comedy komedi'"
+              >
+                <span>Comedy</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-7">
-          <div
-            id="carouselExampleSlidesOnly"
-            class="carousel slide carousel-fade"
-            data-ride="carousel"
-          >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img
-                  src="./src/caraousel/caraousel-1.jpg"
-                  class="d-block w-100 rounded"
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="./src/caraousel/caraousel-2.jpg"
-                  class="d-block w-100 rounded"
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="./src/caraousel/caraousel-3.jpg"
-                  class="d-block w-100 rounded"
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="./src/caraousel/caraousel-4.jpg"
-                  class="d-block w-100 rounded"
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="./src/caraousel/caraousel-5.jpg"
-                  class="d-block w-100 rounded"
-                />
+          <div class="col-md-7">
+            <div
+              id="carouselExampleSlidesOnly"
+              class="carousel slide carousel-fade"
+              data-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="./src/caraousel/caraousel-1.jpg"
+                    class="d-block w-100 rounded"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./src/caraousel/caraousel-2.jpg"
+                    class="d-block w-100 rounded"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./src/caraousel/caraousel-3.jpg"
+                    class="d-block w-100 rounded"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./src/caraousel/caraousel-4.jpg"
+                    class="d-block w-100 rounded"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./src/caraousel/caraousel-5.jpg"
+                    class="d-block w-100 rounded"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- BookList -->
-    <div class="container">
-      <div class="booklist-text mb-4"><h2 class="ml-4">Book List</h2></div>
-      <div id="book-list"></div>
-    </div>
+      <!-- BookList -->
+      <div class="container">
+        <div class="booklist-text mb-4"><h2 class="ml-4">Book List</h2></div>
+        <div id="book-list"></div>
+      </div>
+    </main>
+    {{> footer}}
     <script
       src="https://kit.fontawesome.com/8838a4cfa3.js"
       crossorigin="anonymous"

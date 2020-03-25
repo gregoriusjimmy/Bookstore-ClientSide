@@ -18,58 +18,68 @@
   </head>
   <body>
     {{> nav}}
-    <div class="container py-4">
-      <div class="row pb-2">
-        <div class="col-md-3 py-3">
-          <img class="book-cover py-auto" src="{{{data.imageLinks}}}" />
-        </div>
-        <div class="col-md-6">
-          <div class="pt-2 book-field">
-            <table class="table table-borderless">
-              <tbody>
-                <tr>
-                  <td>Title</td>
-                  <td>: {{data.title}}</td>
-                </tr>
-                <tr>
-                  <td>Author</td>
-                  <td>: {{data.authors}}</td>
-                </tr>
-                <tr>
-                  <td>Publisher</td>
-                  <td>: {{data.publisher}}</td>
-                </tr>
-                <tr>
-                  <td>Published</td>
-                  <td>: {{data.publishedDate}}</td>
-                </tr>
-                <tr>
-                  <td>Pages</td>
-                  <td>: {{data.pageCount}}</td>
-                </tr>
-                <tr>
-                  <td>Categories</td>
-                  <td>: {{data.categories}}</td>
-                </tr>
-              </tbody>
-            </table>
-            <p class="mb-2">Description</p>
-            <div class="book-description">
-              <p>{{data.description}}</p>
+    <main>
+      <div class="container py-4">
+        <div class="row pb-2">
+          <div class="col-md-3 py-3">
+            <img class="book-cover py-auto" src="{{{data.imageLinks}}}" />
+          </div>
+          <div class="col-md-6">
+            <div class="pt-2 book-field">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td>Title</td>
+                    <td>: {{data.title}}</td>
+                  </tr>
+                  <tr>
+                    <td>Author</td>
+                    <td>: {{data.authors}}</td>
+                  </tr>
+                  <tr>
+                    <td>Publisher</td>
+                    <td>: {{data.publisher}}</td>
+                  </tr>
+                  <tr>
+                    <td>Published</td>
+                    <td>: {{data.publishedDate}}</td>
+                  </tr>
+                  <tr>
+                    <td>Pages</td>
+                    <td>: {{data.pageCount}}</td>
+                  </tr>
+                  <tr>
+                    <td>Categories</td>
+                    <td>: {{data.categories}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="mb-2">Description</p>
+              <div class="book-description">
+                <p>{{data.description}}</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-3">
-          <div class="d-flex flex-column h-100">
-            <div class="book-price">
-              <p>Price</p>
-              <p>Rp{{data.price}}</p>
+          <div class="col-md-3">
+            <div class="d-flex flex-column h-100">
+              <div class="book-price">
+                <p>Price</p>
+                <p>Rp{{data.price}}</p>
+              </div>
+              <button
+                id="add-to-cart"
+                bookId="{{{data.id}}}"
+                class="add-to-cart"
+              >
+                Add to Cart
+              </button>
             </div>
-            <button class="add-to-card">Add to Card</button>
           </div>
         </div>
       </div>
-    </div>
+    </main>
+    {{> footer}}
+
     <script
       src="https://kit.fontawesome.com/8838a4cfa3.js"
       crossorigin="anonymous"
@@ -89,5 +99,6 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    <script src="/src/bundle2.js"></script>
   </body>
 </html>

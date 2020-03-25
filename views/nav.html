@@ -22,14 +22,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto"></ul>
-      <form action="/books" method="get" class="form-inline my-2 my-lg-0">
+      <form action="/books" method="get" class="my-2 my-lg-0 ">
         <div class="input-group">
           <input
             name="search"
             class="form-control"
             type="search"
-            placeholder="Search"
+            placeholder="Cari Judul Buku, Penulis"
             aria-label="Search"
           />
           <div class="input-group-append">
@@ -37,6 +36,52 @@
           </div>
         </div>
       </form>
+      <div class="cart-icon">
+        <div>
+          <img class="shopping-icon" src="/src/img/shopping-bag.svg" />
+        </div>
+        <div>
+          <span class="ml-2">Shoping Cart</span>
+        </div>
+      </div>
+      <div id="cart-dropdown" style="display: none;" class="cart-dropdown">
+        <div id="cartItems" class="cart-items"></div>
+        <button onclick="window.location='/checkout'" class="checkout-btn">
+          Go To Checkout
+        </button>
+      </div>
     </div>
   </div>
+  <script>
+    let cart = document.getElementsByClassName('cart-icon')[0];
+    let cartDropdown = document.getElementById('cart-dropdown');
+    cart.addEventListener('click', () => {
+      if (cartDropdown.style.display === 'none') {
+        cartDropdown.style.display = 'block';
+      } else {
+        cartDropdown.style.display = 'none';
+      }
+    });
+    let cartItems = document.getElementById('cartItems');
+    let myCart = JSON.parse(localStorage.getItem('myCart'));
+    myCart.forEach(book => {
+      let cartItem = document.createElement('div'),
+        bookCover = document.createElement('img'),
+        itemDetails = document.createElement('div'),
+        title = document.createElement('span'),
+        price = document.createElement('span');
+
+      cartItem.classList.add('cart-item');
+      itemDetails.classList.add('item-details');
+
+      bookCover.src = book.imageLinks;
+      title.textContent = book.title;
+      price.textContent = `Rp${book.price}`;
+      itemDetails.appendChild(title);
+      itemDetails.appendChild(price);
+      cartItem.appendChild(bookCover);
+      cartItem.appendChild(itemDetails);
+      cartItems.appendChild(cartItem);
+    });
+  </script>
 </nav>
