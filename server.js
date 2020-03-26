@@ -3,8 +3,8 @@ const app = express();
 const port = 3000;
 
 // const books = require('./controller/books');
-const Bookstore = require('./Bookstore');
-const utils = require('./utils');
+const Bookstore = require('./src/Bookstore');
+const utils = require('./src/utils');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mustacheExpress = require('mustache-express');
@@ -75,6 +75,9 @@ app.get('/book/:bookId', (req, res) => {
       },
     });
   });
+});
+app.get('/checkout', (req, res) => {
+  res.render('checkout', { nav: 'nav', footer: 'footer' });
 });
 
 // listening to port

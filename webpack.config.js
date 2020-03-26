@@ -1,11 +1,16 @@
 module.exports = {
   //define entry point
-  entry: './script2.js',
+  entry: {
+    home: './src/home.script.js',
+    book: './src/book.script.js',
+    checkout: './src/checkout.script.js',
+    nav: './src/nav.script.js',
+  },
 
   //define output point
   output: {
     path: `${__dirname}/public/src`,
-    filename: 'bundle2.js',
+    filename: '[name].bundle.js',
   },
 
   //   module: {

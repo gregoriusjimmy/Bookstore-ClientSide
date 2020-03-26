@@ -41,7 +41,7 @@
           <img class="shopping-icon" src="/src/img/shopping-bag.svg" />
         </div>
         <div>
-          <span class="ml-2">Shoping Cart</span>
+          <span class="ml-2" style="font-weight: 700;">Shoping Cart</span>
         </div>
       </div>
       <div id="cart-dropdown" style="display: none;" class="cart-dropdown">
@@ -52,36 +52,5 @@
       </div>
     </div>
   </div>
-  <script>
-    let cart = document.getElementsByClassName('cart-icon')[0];
-    let cartDropdown = document.getElementById('cart-dropdown');
-    cart.addEventListener('click', () => {
-      if (cartDropdown.style.display === 'none') {
-        cartDropdown.style.display = 'block';
-      } else {
-        cartDropdown.style.display = 'none';
-      }
-    });
-    let cartItems = document.getElementById('cartItems');
-    let myCart = JSON.parse(localStorage.getItem('myCart'));
-    myCart.forEach(book => {
-      let cartItem = document.createElement('div'),
-        bookCover = document.createElement('img'),
-        itemDetails = document.createElement('div'),
-        title = document.createElement('span'),
-        price = document.createElement('span');
-
-      cartItem.classList.add('cart-item');
-      itemDetails.classList.add('item-details');
-
-      bookCover.src = book.imageLinks;
-      title.textContent = book.title;
-      price.textContent = `Rp${book.price}`;
-      itemDetails.appendChild(title);
-      itemDetails.appendChild(price);
-      cartItem.appendChild(bookCover);
-      cartItem.appendChild(itemDetails);
-      cartItems.appendChild(cartItem);
-    });
-  </script>
+  <script src="/src/nav.bundle.js"></script>
 </nav>
