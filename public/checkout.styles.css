@@ -23,7 +23,7 @@
 .total {
   margin-top: 30px;
   margin-left: auto;
-  font-size: 36px;
+  font-size: 30px;
 }
 .test-warning {
   text-align: center;
@@ -68,4 +68,112 @@
 .remove-button {
   padding-left: 12px;
   cursor: pointer;
+}
+.paynow {
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  color: aliceblue;
+  background-color: #f38181;
+  border: 0px solid #f38181;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 5px;
+  transition: 0.3s;
+  align-self: flex-end;
+}
+.paynow:hover {
+  -ms-transform: scale(0.9, 0.9); /* IE 9 */
+  -webkit-transform: scale(0.9, 0.9); /* Safari */
+  transform: scale(0.9, 0.9);
+}
+@media screen and (max-width: 768px) {
+  .checkout-page {
+    width: 90%;
+  }
+  .header-block {
+    width: 22%;
+  }
+  .header-block:last-child {
+    width: 12%;
+  }
+}
+.row-payment {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+input[type='text'] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn-payment {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn-payment:hover {
+  background-color: #45a049;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
 }

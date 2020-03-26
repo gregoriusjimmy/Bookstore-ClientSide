@@ -68,4 +68,7 @@ if (items) {
   let totalText = document.createElement('span');
   totalText.textContent = `TOTAL: Rp${utils.formatMoney(total.toString())}`;
   totalContainer.appendChild(totalText);
+
+  let pricePayment = document.getElementById('pricePayment');
+  pricePayment.textContent = `Rp${utils.formatMoney(total.toString())}`;
 }
