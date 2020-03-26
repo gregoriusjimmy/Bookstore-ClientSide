@@ -48,7 +48,7 @@ class Bookstore {
       Bookstore.clearItem(cartItemToRemove);
     } else {
       oldCart = oldCart.map(cartItem =>
-        cartItem.id === cartItemToAdd.id
+        cartItem.id === cartItemToRemove.id
           ? { ...cartItem, quantity: cartItem.quantity - 1 }
           : cartItem
       );
