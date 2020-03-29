@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-// const books = require('./controller/books');
 const Bookstore = require('./src/Bookstore');
 const utils = require('./src/utils');
 const cors = require('cors');
@@ -14,9 +13,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
+
 // register mustache
 app.engine('html', mustacheExpress());
-// app.engine('html', mustacheExpress('views/partials', '.html'));
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 

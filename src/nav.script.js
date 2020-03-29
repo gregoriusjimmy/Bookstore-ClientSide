@@ -10,8 +10,8 @@ cart.addEventListener('click', () => {
     cartDropdown.style.display = 'none';
   }
 });
-let cartItems = document.getElementById('cartItems');
 
+let cartItems = document.getElementById('cartItems');
 let myCart = Bookstore.getItems();
 if (myCart) {
   myCart.forEach(book => {

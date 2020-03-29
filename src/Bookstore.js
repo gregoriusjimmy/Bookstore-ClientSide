@@ -16,6 +16,7 @@ class Bookstore {
     let data = await response.json();
     return data;
   }
+  // CART system
   static getItems() {
     return JSON.parse(window.localStorage.getItem('myCart'));
   }
